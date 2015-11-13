@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mkdevfcmgr</title>
+  <title>Флэшкарточкер</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+	<section id="container">
+	    <header class="clearfix">
+    	  <h1>Флэшкарточкер</h1>
+    		<ul class="navigation-links">
+        		<li><a href="#"><button type="button" class="btn btn-primary btn-lg">Все карточки</button></a></li>
+        		<li><a href="#"><button type="button" class="btn btn-primary btn-lg">Добавить карточку</button></a></li>
+      		</ul>
+    	</header>
 
+<%= yield %>
+	
+	</section>
 </body>
 </html>
