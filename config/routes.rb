@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :cards
 
+  get 'cards/:id/delete' => 'cards#delete', :as => :cards_delete
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

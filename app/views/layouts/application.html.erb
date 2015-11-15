@@ -15,7 +15,7 @@
     	<h1>Флэшкарточкер</h1>
     		<ul class="navigation-links">
         	<li><a href="/cards"><button type="button" class="btn btn-primary btn-lg">Все карточки</button></a></li>
-        	<li><a href="#"><button type="button" class="btn btn-primary btn-lg">Добавить карточку</button></a></li>
+        	<li><%= button_to "Добавить карточку", new_card_path, :class => "btn btn-primary btn-lg", :method => :get  %></li>
       	</ul>
     	</header>
 
