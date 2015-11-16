@@ -4,7 +4,7 @@ class Card < ActiveRecord::Base
   validate :check_unique
 
   def auto_date
-    unless self.present? 
+    unless self.new_record? 
       self.review_date = Time.current + 3.days
     end
   end
