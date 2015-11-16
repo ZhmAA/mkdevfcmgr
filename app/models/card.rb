@@ -4,14 +4,14 @@ class Card < ActiveRecord::Base
   validate :check_unique
 
   def auto_date
-    unless Card.present?
+    unless self.present? 
       self.review_date = Time.current + 3.days
     end
   end
 
   def check_unique
     if original_text.downcase == translated_text.downcase
-    errors.add(:original_text, "can't be the same as translated_text")
+      даerrors.add(:original_text, "can't be the same as translated_text")
     end
   end
 end

@@ -17,7 +17,7 @@ class CardsController < ApplicationController
     if @card.save
       redirect_to action: :index
     else
-      render('new')
+      render :new
     end
   end
 
@@ -30,7 +30,7 @@ class CardsController < ApplicationController
     if @card.update(card_params)
       redirect_to action: :index
     else
-      render('index')
+      render :index
     end
   end
 
