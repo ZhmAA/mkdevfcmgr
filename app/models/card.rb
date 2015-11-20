@@ -11,7 +11,7 @@ class Card < ActiveRecord::Base
 
   def check_unique
     if original_text.downcase == translated_text.downcase
-      даerrors.add(:original_text, "can't be the same as translated_text")
+      errors.add(:original_text, "can't be the same as translated_text")
     end
   end
 end
