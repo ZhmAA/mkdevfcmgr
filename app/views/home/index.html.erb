@@ -2,5 +2,12 @@
   <p style="font-size: 22px;">
     Первый в мире удобный менеджер флеш-карточек. Именно так.
   </p>
+  <% @cards.each do |card| %>
+  <div class="col-xs-4">
+    <p><%= render 'form' %></p>
+  	<p><%= card.translated_text %></p>
+  	<p><%= card.review_date.strftime("%d-%m-%Y") %></p>
+  </div>
+  <% end %>
 </section>
 

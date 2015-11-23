@@ -14,4 +14,13 @@ class Card < ActiveRecord::Base
       errors.add(:original_text, "can't be the same as translated_text")
     end
   end
+
+  #def check_card
+  #  if self.original_text = true
+  #    redirect_to action: :index
+  #  else
+  #    flash.now[:error] = "Не правильно"
+  #    render :index
+  #  end
+  #end
 end
