@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   root 'home#index'
-  post '/check', to: 'home#check'
+  patch '/check', to: 'home#check'
 
   resources :cards
 

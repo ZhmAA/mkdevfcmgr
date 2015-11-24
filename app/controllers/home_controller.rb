@@ -1,16 +1,14 @@
-require 'pry'
-
+#require 'pry'
 class HomeController < ApplicationController
   
   def index
-    @card = Card.new
-    @cards = Card.where('review_date > ?', Time.current).limit(1).order("RANDOM()")
+    @card = Card.random_card
   end
 
   def check
-    binding.pry
+    #binding.pry
     @card = Card.find(params[:card_id])
-    if @card.original_text == params[:original_text]
+    if @card.original_text == params[:card][:original_text]
       redirect_to action: :index
     else
       flash.now[:error] = "Не правильно"

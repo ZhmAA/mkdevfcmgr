@@ -1,5 +1,5 @@
 <%= simple_form_for @card, url: check_path do |f| %>
   <%= f.input :original_text, label: 'Original text field' %>
-  <%= hidden_field_tag "card_id", :id => @card.id  %>
+  <%= hidden_field_tag "card_id", @card.id %>
   <%= f.button :submit, "Проверить" %>
 <% end %>
