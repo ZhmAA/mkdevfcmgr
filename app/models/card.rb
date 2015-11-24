@@ -3,10 +3,10 @@ class Card < ActiveRecord::Base
   validates :original_text, :translated_text, presence: true
   validate :check_unique
 
-  scope :random_card, -> { where('review_date > ?', Time.current).order("RANDOM()").take }
+  scope :random_card, -> { where('review_date <= ?', Time.current).order("RANDOM()").take }
 
   def auto_date
-    unless self.new_record? 
+    unless self.new_record?
       self.review_date = Time.current + 3.days
     end
   end
@@ -17,10 +17,10 @@ class Card < ActiveRecord::Base
     end
   end
 
-  #def 
+  #def
   #  if self.check
   #    self.review_date = Time.current + 3.days
   #  end
   #end
-    
+
 end
