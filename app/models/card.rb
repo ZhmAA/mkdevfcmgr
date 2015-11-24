@@ -17,7 +17,7 @@ class Card < ActiveRecord::Base
     end
   end
 
-  #def
+  #def check_card
   #  if self.check
   #    self.review_date = Time.current + 3.days
   #  end
