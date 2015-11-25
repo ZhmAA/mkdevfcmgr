@@ -17,10 +17,13 @@ class Card < ActiveRecord::Base
     end
   end
 
-  #def check_card
-  #  if self.check
-  #    self.review_date = Time.current + 3.days
-  #  end
-  #end
+  def check_card(translate)
+    if self.original_text == translate
+      self.review_date = Time.current + 3.days
+      self.save
+      return true
+    end
+      return false
+  end
 
 end
