@@ -21,9 +21,7 @@ class Card < ActiveRecord::Base
     if self.original_text == translate
       self.review_date = Time.current + 3.days
       self.save
-      return true
     end
-      return false
   end
 
 end
