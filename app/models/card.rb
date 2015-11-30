@@ -7,7 +7,7 @@ class Card < ActiveRecord::Base
 
   def auto_date
     unless self.new_record?
-      self.review_date = (Time.current + 3.days).to_date
+      self.review_date = Date.current + 3.days
     end
   end
 
@@ -19,10 +19,10 @@ class Card < ActiveRecord::Base
 
   def check_card(translate)
     if self.original_text == translate
-      self.review_date = (Time.current + 3.days).to_date
+      self.review_date = Date.current + 3.days
       self.save
-      return true
-    end 
-      return false
+    else 
+      false
     end
+  end
 end

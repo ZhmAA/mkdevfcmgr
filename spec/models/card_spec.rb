@@ -12,17 +12,17 @@ RSpec.describe Card, :type => :model do
   
   context "editor user" do
     before(:each) do
-      @value = (Time.current + 3.days).to_date
+      @value = Date.current + 3.days
     end
 
     it "check that date change after card update" do
       @card.auto_date
-      expect(@card.review_date).to be == (@value)
+      expect(@card.review_date).to eq(@value)
     end
   
     it "check that when card check date change" do
       @card.check_card(@card.original_text)
-      expect(@card.review_date).to be == (@value)
+      expect(@card.review_date).to eq(@value)
     end
   end
 
