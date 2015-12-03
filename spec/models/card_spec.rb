@@ -28,19 +28,4 @@ RSpec.describe Card, :type => :model do
   it "check that input text equal to original text" do
     expect(@card.check_card("original_text")).to be true
   end
-
-  it "feature test, check that card check" do
-    visit root_path
-    fill_in :translate, with: "original_text"
-    click_button "Проверить"
-    expect(page).to have_content "Молодец!"
-  end
-
-  it "feature test, check that card check failed" do
-    visit root_path
-    fill_in :translate, with: "wrong ot"
-    click_button "Проверить"
-    expect(page).to have_content "Не правильно"
-  end
-
 end
