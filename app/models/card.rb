@@ -1,4 +1,5 @@
 class Card < ActiveRecord::Base
+  belongs_to :user
   before_save :auto_date
   validates :original_text, :translated_text, presence: true
   validate :check_unique
