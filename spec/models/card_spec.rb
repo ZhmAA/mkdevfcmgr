@@ -28,5 +28,4 @@ RSpec.describe Card, :type => :model do
   it "check that input text equal to original text" do
     expect(@card.check_card("original_text")).to be true
   end
-
 end

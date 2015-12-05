@@ -3,7 +3,7 @@ class Card < ActiveRecord::Base
   validates :original_text, :translated_text, presence: true
   validate :check_unique
 
-  scope :random_card, -> { where('review_date <= ?', Time.current).order("RANDOM()").take }
+  scope :random_cards, -> { where('review_date <= ?', Time.current).order('RANDOM()') }
 
   def auto_date
     unless self.new_record?

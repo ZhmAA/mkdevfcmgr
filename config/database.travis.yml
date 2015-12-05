@@ -1,0 +1,6 @@
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: mkdevfcmgr_test
+  pool: 5
+  timeout: 5000
