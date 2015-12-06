@@ -30,6 +30,9 @@ gem 'simple_form'
 
 gem 'nokogiri', '~> 1.6'
 
+# registration/authentication engine
+gem 'sorcery'
+
 #debugger
 #gem 'pry-nav'
 
