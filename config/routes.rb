@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   get "signup" => "users#new", :as => "signup"
 
   resources :cards
-  resources :users
-  resources :user_sessions
+  resources :users, only: [:new, :create]
+  resources :user_sessions, only: [:new, :create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
