@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   get "logout" => "user_sessions#destroy", :as => "logout"
   get "login" => "user_sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
+  get "edit" => "users#edit", :as => "edit"
 
   resources :cards
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :edit, :update]
   resources :user_sessions, only: [:new, :create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.

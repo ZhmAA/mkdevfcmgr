@@ -29,6 +29,7 @@
 
       <% if current_user %>
         Вы зашли как <%= current_user.email %>.
+        <%= link_to "Редактировать", edit_path %>
         <%= link_to "Выйти", logout_path %>
       <% else %>
         <%= link_to "Зарегистрироваться", signup_path %> or

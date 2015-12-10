@@ -13,6 +13,6 @@ doc = Nokogiri::HTML(open("http://www.languagedaily.com/learn-german/vocabulary/
 doc.xpath('//table//tr[@class="rowA" or @class="rowB"]').each do |word| 
   original = word.css(".bigLetter").text
   translated = word.css("td:nth-child(3)").text
-  Card.create(original_text: original, translated_text: translated, review_date: Time.current)
+  Card.create(original_text: original, translated_text: translated, review_date: Time.current, user_id: '1')
 end
 
