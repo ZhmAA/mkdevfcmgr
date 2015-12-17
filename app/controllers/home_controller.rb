@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   skip_before_action :require_login, only: [:index]
   
   def index
-    @card = current_user.cards.random_cards.first
+    @card = Card.random_cards.first
   end
 
   def check
