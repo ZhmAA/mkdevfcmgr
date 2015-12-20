@@ -3,6 +3,8 @@ require "rails_helper"
 describe "feature check card", :type => :feature do
   
   before(:each) do
+    @user = create(:user)
+    login("name@name.com", "12345")
     @card = create(:card)
     visit root_path
   end
