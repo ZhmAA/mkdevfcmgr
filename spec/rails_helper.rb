@@ -60,4 +60,11 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include Rails.application.routes.url_helpers
   config.include Capybara::DSL
+
+  def login(email, password)
+    visit "/login"
+    fill_in "Email", with: email
+    fill_in "Password", with: password
+    click_button "Войти"
+  end
 end

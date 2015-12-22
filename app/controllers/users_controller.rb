@@ -22,8 +22,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
       if @user.update(user_params)
-        flash[:success] = "Профиль отредактирован успешно"
-        redirect_to root_url
+        redirect_to root_url, :notice => "Профиль отредактирован успешно!"
       else
         render 'edit'
       end

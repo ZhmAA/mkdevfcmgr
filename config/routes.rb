@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :user_sessions, only: [:new, :create, :destroy]
 
   post "oauth/callback" => "oauths#callback"
+  get "oauth/callback" => "oauths#callback"
   get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
 
   # The priority is based upon order of creation: first created -> highest priority.
