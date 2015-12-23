@@ -6,7 +6,7 @@ describe "feature check card", :type => :feature do
 
   before(:each) do
     login("first@name.com", "123456789")
-    @card = create(:card, user_id: "1")
+    @card = create(:card, user: user)
     visit root_path
   end
 

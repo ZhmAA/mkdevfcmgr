@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'oauths/oauth'
-
-  get 'oauths/callback'
-
   root 'home#index'
   post 'check', to: 'home#check'
   get "logout" => "user_sessions#destroy", :as => "logout"
