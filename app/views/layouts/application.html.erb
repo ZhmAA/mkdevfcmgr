@@ -27,6 +27,17 @@
         <div class="alert alert-danger"><%= flash[:error] %></div>
       <% end %>
 
+      <% if current_user %>
+        Вы зашли как <%= current_user.email %>.
+        <%= link_to "Редактировать", edit_path %>
+        <%= link_to "Выйти", logout_path %>
+      <% else %>
+        <%= link_to 'Login with Twitter', auth_at_provider_path(:provider => :twitter) %>
+        <%= link_to 'Login with Facebook', auth_at_provider_path(:provider => :facebook) %>
+        <%= link_to "Зарегистрироваться", signup_path %> or
+        <%= link_to "Войти", login_path %>.
+      <% end %>
+
 <%= yield %>
 
 	</section>
