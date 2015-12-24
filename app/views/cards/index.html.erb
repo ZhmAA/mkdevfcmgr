@@ -1,12 +1,12 @@
 <section>
   <% @cards.each do |card| %>
     <div class="col-xs-4">
-  	  <p><%= card.original_text %></p>
-  	  <p><%= card.translated_text %></p>
+      <p><%= card.original_text %></p>
+      <p><%= card.translated_text %></p>
       <%= image_tag card.avatar.thumb.url %>
-  	  <p><%= card.review_date.strftime("%d-%m-%Y") %></p>
-  	  <%= link_to 'Edit', edit_card_path(card) %>
-  	  <%= link_to 'Destroy', card_path(card),
+      <p><%= card.review_date.strftime("%d-%m-%Y") %></p>
+      <%= link_to 'Edit', edit_card_path(card) %>
+      <%= link_to 'Destroy', card_path(card),
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
     </div>
