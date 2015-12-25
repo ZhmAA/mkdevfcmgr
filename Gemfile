@@ -33,6 +33,11 @@ gem 'nokogiri', '~> 1.6'
 # registration/authentication engine
 gem 'sorcery'
 
+#images
+gem 'carrierwave'
+gem 'mini_magick'
+gem "fog"
+
 #debugger
 #gem 'pry-nav'
 
