@@ -1,5 +1,6 @@
 class Card < ActiveRecord::Base
   belongs_to :user
+  belongs_to :deck
   before_save :auto_date
   mount_uploader :avatar, AvatarUploader
   validates :original_text, :translated_text, presence: true

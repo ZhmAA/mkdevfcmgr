@@ -1,0 +1,13 @@
+<section>
+  <h2>Выберите колоду</h2>
+  <% @decks.each do |deck| %>
+    <div class="col-xs-4">
+      <p><%= deck.title %></p>
+      <%= link_to 'Show', deck %>
+      <%= link_to 'Edit', edit_deck_path(deck) %>
+      <%= link_to 'Destroy', deck_path(deck),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+    </div>
+  <% end %>
+</section>

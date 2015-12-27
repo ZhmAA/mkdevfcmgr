@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "edit" => "users#edit", :as => "edit"
 
   resources :cards
+  resources :decks
   resources :users, only: [:new, :create, :edit, :update]
   resources :user_sessions, only: [:new, :create, :destroy]
 
