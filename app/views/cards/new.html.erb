@@ -1,3 +1,7 @@
-<h2>New card</h2>
-<%= render 'form' %>
-<%= link_to 'Back', cards_path %>
+<% if @decks.any? %>
+  <h2>New card</h2>
+  <%= render 'form' %>
+  <%= link_to 'Back', cards_path %>
+<% else %>
+  <p>У вас еще нет колод для карточек. Создайте несколько.</p>
+<% end %>

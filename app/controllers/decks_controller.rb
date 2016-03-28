@@ -4,7 +4,7 @@ class DecksController < ApplicationController
   end
 
   def show
-    @deck = Deck.find(params[:id])
+    @deck = current_user.decks.find(params[:id])
     @cards = @deck.cards
   end
 
@@ -22,11 +22,11 @@ class DecksController < ApplicationController
   end
 
   def edit
-    @deck = Deck.find(params[:id])
+    @deck = current_user.decks.find(params[:id])
   end
 
   def update
-    @deck = Deck.find(params[:id])
+    @deck = current_user.decks.find(params[:id])
     if @deck.update(deck_params)
       redirect_to action: :index
     else
@@ -46,6 +46,6 @@ class DecksController < ApplicationController
   private
 
   def deck_params
-    params.require(:deck).permit(:title, :user_id)
+    params.require(:deck).permit(:title, :user_id, :current)
   end
 end

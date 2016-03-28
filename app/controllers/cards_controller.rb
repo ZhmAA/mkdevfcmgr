@@ -1,5 +1,6 @@
 class CardsController < ApplicationController
-    
+  before_action :userdecks, only: [:new, :create, :edit, :update]
+
   def index
     @cards = current_user.cards
   end
@@ -15,7 +16,7 @@ class CardsController < ApplicationController
   def create
     @card = current_user.cards.new(card_params)
     if @card.save
-      redirect_to action: :index
+      redirect_to controller: :decks, action: :index
     else
       render :new
     end
@@ -30,7 +31,7 @@ class CardsController < ApplicationController
     if @card.update(card_params)
       redirect_to action: :index
     else
-      render :index
+      redirect_to controller: :decks, action: :index
     end
   end
 
@@ -40,12 +41,16 @@ class CardsController < ApplicationController
 
   def destroy
     Card.find(params[:id]).destroy
-    redirect_to action: :index
+    redirect_to controller: :decks, action: :index
   end
 
   private
 
   def card_params
     params.require(:card).permit(:original_text, :translated_text, :review_date, :user_id, :avatar, :deck_id)
+  end
+
+  def userdecks
+    @decks = current_user.decks
   end
 end

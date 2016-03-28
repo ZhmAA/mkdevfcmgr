@@ -1,4 +1,6 @@
 <%= simple_form_for @deck do |f| %>
   <%= f.input :title, label: 'Deck title' %>
+  <%= f.select :current, [['Текущая колода', true],['Неактивная колода', false]] %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.button :submit %>
 <% end %>
