@@ -28,7 +28,7 @@ describe "feature check user", :type => :feature do
 
     it "check that user logout succesful" do
       click_link "Выйти"
-      expect(page).to have_content "Вы вышли из аккаунта!"
+      expect(current_path).to eq login_path
     end
 
     it "check that user edit succesful" do
