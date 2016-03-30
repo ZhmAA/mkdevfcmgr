@@ -10,7 +10,7 @@ class Deck < ActiveRecord::Base
   private
 
   def deactivate_all_decks
-  	if self.current
+    if self.current
       user.decks.update_all(current: false)
     end
   end

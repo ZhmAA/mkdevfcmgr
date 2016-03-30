@@ -10,12 +10,12 @@
 </head>
 <body>
 
-	<section id="container">
-	  <header class="clearfix">
-    	<h1><a href="/">Флэшкарточкер</a></h1>
-    		<ul class="navigation-links">
-        	<li><%= button_to "Все карточки", decks_path, :class => "btn btn-primary btn-lg", :method => :get  %></li>
-        	<li><%= button_to "Добавить карточку", new_card_path, :class => "btn btn-primary btn-lg", :method => :get  %></li>
+  <section id="container">
+    <header class="clearfix">
+      <h1><a href="/">Флэшкарточкер</a></h1>
+        <ul class="navigation-links">
+          <li><%= button_to "Все карточки", decks_path, :class => "btn btn-primary btn-lg", :method => :get  %></li>
+          <li><%= button_to "Добавить карточку", new_card_path, :class => "btn btn-primary btn-lg", :method => :get  %></li>
           <li><%= button_to "Добавить колоду", new_deck_path, :class => "btn btn-primary btn-lg", :method => :get  %></li>
       	</ul>
     	</header>
@@ -41,6 +41,6 @@
 
 <%= yield %>
 
-	</section>
+  </section>
 </body>
 </html>

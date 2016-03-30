@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe Card, :type => :model do
 
-  let!(:user) { create(:user, email: "first@name.com", password: "123456789") }
+  let!(:user) { create(:user) }
   let(:deck) { create :deck, user: user }
   
   before(:each) do
