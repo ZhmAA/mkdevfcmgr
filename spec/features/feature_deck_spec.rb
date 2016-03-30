@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "feature check decks", :type => :feature do
 
-  let!(:user) { create(:user, email: "first@name.com", password: "123456789", id: '1') }
+  let!(:user) { create(:user, email: "first@name.com", password: "123456789") }
 
   before(:each) do
     login("first@name.com", "123456789")

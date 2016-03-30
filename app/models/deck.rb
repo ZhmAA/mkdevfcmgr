@@ -5,12 +5,14 @@ class Deck < ActiveRecord::Base
 
   validates :title, presence: true
 
-  scope :current, -> { where("current", true) }
+  scope :current, -> { where(current: true) }
   
   private
 
   def deactivate_all_decks
-    user.decks.update_all(current: false)
+  	if self.current
+      user.decks.update_all(current: false)
+    end
   end
 
 end
