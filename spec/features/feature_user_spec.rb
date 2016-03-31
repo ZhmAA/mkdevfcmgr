@@ -45,7 +45,7 @@ describe "feature check user", :type => :feature do
 
     it "he can't create card" do
       visit root_path
-      click_button "Добавить карточку"
+      click_link "Добавить карточку"
       expect(page).to have_content "Введите свои данные для того чтобы зайти!"
     end
     

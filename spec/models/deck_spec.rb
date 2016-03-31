@@ -3,8 +3,12 @@ require 'rails_helper'
 RSpec.describe Deck, type: :model do
   
   let!(:user) { create(:user) }
-  let!(:one_of_deck) { create :deck, user: user }
-  let!(:one_more_deck) { create :deck, user: user }
+  let(:one_of_deck) { create :deck, user: user }
+  let(:one_more_deck) { create :deck, user: user }
+    
+  it "check that default current deck status - false" do
+    expect(one_of_deck.is_active?).to be false
+  end
 
   before(:each) do
     login("first@name.com", "123456789")
@@ -13,11 +17,11 @@ RSpec.describe Deck, type: :model do
   end
 
   it "check that some deck not current" do
-    expect(one_of_deck.current).to be false
+    expect(one_of_deck.is_active?).to be false
   end
 
   it "check that other deck current" do
-    expect(one_more_deck.current).to be true
+    expect(one_more_deck.is_active?).to be true
   end
 
   it "check that only one deck current" do

@@ -1,5 +1,4 @@
 class Deck < ActiveRecord::Base
-  before_save :deactivate_all_decks
   belongs_to :user
   has_many :cards
 
@@ -7,6 +6,13 @@ class Deck < ActiveRecord::Base
 
   scope :current, -> { where(current: true) }
   
+  before_save :deactivate_all_decks
+    
+  def is_active?
+    return self.reload.current if self.persisted?
+    false
+  end
+
   private
 
   def deactivate_all_decks
