@@ -1,6 +1,7 @@
 - if @decks.any?
-  %h2 New card
+  %h2 Новая карточка
   = render 'form'
-  = link_to 'Back', cards_path
+  .backbutton
+    = link_to 'Back', cards_path, :class => "btn btn-danger btn-sm"
 - else
   %p У вас еще нет колод для карточек. Создайте несколько.

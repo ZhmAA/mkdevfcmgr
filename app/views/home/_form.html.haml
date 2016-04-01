@@ -1,4 +1,6 @@
 = form_tag check_path do
-  = text_field_tag :translate
+  %fieldset.form-group
+    = text_field_tag :translate
   = hidden_field_tag :card_id, @card.id
-  %button Проверить!
+  %button.btn.btn-primary
+    Проверить!
