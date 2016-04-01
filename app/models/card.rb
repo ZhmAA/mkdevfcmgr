@@ -1,8 +1,10 @@
 class Card < ActiveRecord::Base
   belongs_to :user
+  belongs_to :deck
   before_save :auto_date
   mount_uploader :avatar, AvatarUploader
   validates :original_text, :translated_text, presence: true
+  validates :deck, presence: true
   validate :check_unique
 
   scope :random_cards, -> { where('review_date <= ?', Time.current).order('RANDOM()') }

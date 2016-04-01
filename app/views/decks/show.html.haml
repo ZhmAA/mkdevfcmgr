@@ -1,0 +1,11 @@
+%section
+  - @cards.each do |card|
+    .col-xs-4
+      %p= card.original_text
+      %p= card.translated_text
+      = image_tag card.avatar.thumb.url
+      %p= card.review_date.strftime("%d-%m-%Y")
+      = link_to 'Edit', edit_card_path(card)
+      = link_to 'Destroy', card_path(card), |
+        method: :delete,                    |
+        data: { confirm: 'Are you sure?' }  |

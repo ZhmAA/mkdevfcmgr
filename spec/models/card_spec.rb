@@ -1,9 +1,13 @@
 require "rails_helper"
 
 RSpec.describe Card, :type => :model do
+
+  let!(:user) { create(:user) }
+  let(:deck) { create :deck, user: user }
   
   before(:each) do
-    @card = create(:card)
+    login("first@name.com", "123456789")
+    @card = create(:card, deck: deck, user: user)
     @value = Date.current + 3.days
   end
 

@@ -1,0 +1,7 @@
+%header.clearfix
+  %h1
+    %a{:href => "/"} Флэшкарточкер
+  %ul.navigation-links
+    %li= link_to "Все карточки", decks_path, :class => "btn btn-primary btn-lg"
+    %li= link_to "Добавить карточку", new_card_path, :class => "btn btn-primary btn-lg"
+    %li= link_to "Добавить колоду", new_deck_path, :class => "btn btn-primary btn-lg"

@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :authentications, :dependent => :destroy
   accepts_nested_attributes_for :authentications
   has_many :cards
+  has_many :decks
   before_save { self.email = email.downcase }
   USER_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, :presence => true, :uniqueness => true, :format => USER_EMAIL_REGEX

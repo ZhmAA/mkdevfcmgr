@@ -10,15 +10,10 @@
 </head>
 <body>
 
-	<section id="container">
-	  <header class="clearfix">
-    	<h1>Флэшкарточкер</h1>
-    		<ul class="navigation-links">
-        	<li><a href="/cards"><button type="button" class="btn btn-primary btn-lg">Все карточки</button></a></li>
-        	<li><%= button_to "Добавить карточку", new_card_path, :class => "btn btn-primary btn-lg", :method => :get  %></li>
-      	</ul>
-    	</header>
-
+  <section id="container">
+    
+      <%= render "shared/header" %>
+ 
       <% if flash[:notice] %>
        <div class="alert alert-success"><%= flash[:notice] %></div>
       <% end %>
@@ -40,6 +35,6 @@
 
 <%= yield %>
 
-	</section>
+  </section>
 </body>
 </html>

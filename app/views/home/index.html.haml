@@ -1,0 +1,10 @@
+%section
+  %p{:style => "font-size: 22px;"}
+    Первый в мире удобный менеджер флеш-карточек. Именно так.
+  .col-xs-4
+    - if @card.nil?
+      %p Карточек нет
+    - else
+      %p= render 'form'
+      %p= @card.translated_text
+      %p= @card.review_date.strftime("%d-%m-%Y")
