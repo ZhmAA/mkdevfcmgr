@@ -7,11 +7,6 @@ class Deck < ActiveRecord::Base
   scope :current, -> { where(current: true) }
   
   before_save :deactivate_all_decks
-    
-  #def is_active?
-  #  return self.reload.current if self.persisted?
-  #  false
-  #end
 
   private
 

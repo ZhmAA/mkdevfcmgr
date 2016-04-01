@@ -38,6 +38,8 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem "fog"
 
+gem 'haml'
+
 #debugger
 #gem 'pry-nav'
 

@@ -1,0 +1,12 @@
+%section
+  %h2 Выберите колоду или создайте новую
+  - @decks.each do |deck|
+    .col-xs-4
+      %p= deck.title
+      - if deck.current == true
+        %p Текущая колода
+      = link_to 'Show', deck
+      = link_to 'Edit', edit_deck_path(deck)
+      = link_to 'Destroy', deck_path(deck), |
+        method: :delete,                    |
+        data: { confirm: 'Are you sure?' }  |
