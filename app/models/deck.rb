@@ -8,10 +8,10 @@ class Deck < ActiveRecord::Base
   
   before_save :deactivate_all_decks
     
-  def is_active?
-    return self.reload.current if self.persisted?
-    false
-  end
+  #def is_active?
+  #  return self.reload.current if self.persisted?
+  #  false
+  #end
 
   private
 

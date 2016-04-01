@@ -7,7 +7,7 @@ RSpec.describe Deck, type: :model do
   let(:one_more_deck) { create :deck, user: user }
     
   it "check that default current deck status - false" do
-    expect(one_of_deck.is_active?).to be false
+    expect(one_of_deck.reload.current).to be false
   end
 
   before(:each) do
@@ -17,11 +17,11 @@ RSpec.describe Deck, type: :model do
   end
 
   it "check that some deck not current" do
-    expect(one_of_deck.is_active?).to be false
+    expect(one_of_deck.reload.current).to be false
   end
 
   it "check that other deck current" do
-    expect(one_more_deck.is_active?).to be true
+    expect(one_more_deck.current).to be true
   end
 
   it "check that only one deck current" do
