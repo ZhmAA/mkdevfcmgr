@@ -40,6 +40,8 @@ gem "fog"
 
 gem 'haml'
 
+gem 'rails_12factor', group: :production
+
 #debugger
 #gem 'pry-nav'
 

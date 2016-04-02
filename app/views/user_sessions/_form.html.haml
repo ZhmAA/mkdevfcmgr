@@ -1,8 +1,14 @@
-= form_tag user_sessions_path do
-  = label_tag :email
-  = text_field_tag :email, params[:email]
-  = label_tag :password
-  = password_field_tag :password
-  = check_box_tag :remember_me, 1, params[:remember_me]
-  = label_tag :remember_me
+= form_tag user_sessions_path, class: "form-horizontal" do
+  .control-group
+    = label_tag :email
+    .controls
+      = text_field_tag :email, params[:email]
+  .control-group
+    = label_tag :password
+    .controls
+      = password_field_tag :password
+  .control-group
+    .controls
+      = check_box_tag :remember_me, 1, params[:remember_me]
+      = label_tag :remember_me
   = submit_tag "Войти"

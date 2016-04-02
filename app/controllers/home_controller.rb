@@ -13,8 +13,7 @@ class HomeController < ApplicationController
     @card = current_user.cards.find(params[:card_id])
     if @card.check_card(params[:translate])
       p :right
-      flash.now[:notice] = "Молодец!"
-      redirect_to action: :index
+      redirect_to root_url, notice: "Правильно!"
     else
       p :wrong
       flash.now[:error] = "Не правильно"
