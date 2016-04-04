@@ -1,7 +1,7 @@
 class Card < ActiveRecord::Base
   belongs_to :user
   belongs_to :deck
-  before_save :auto_date
+  #before_save :auto_date
   mount_uploader :avatar, AvatarUploader
   validates :original_text, :translated_text, presence: true
   validates :deck, presence: true
@@ -9,26 +9,25 @@ class Card < ActiveRecord::Base
 
   scope :random_cards, -> { where('review_date <= ?', Time.current).order('RANDOM()') }
   
-  def auto_date
-    unless self.new_record?
-      self.review_date = Time.current + 3.days
-    end
-  end
+  #def auto_date
+  #  unless self.new_record?
+  #    self.review_date = Time.current + 3.days
+  #  end
+  #end
   
   def change_date(group_num)
+    timenow = Time.current
     case group_num
-      when 0
-        Time.current
-      when 1
-        Time.current + 12.hour
+      when 0..1
+        timenow + 12.hour
       when 2
-        Time.current + 3.days
+        timenow + 3.days
       when 3
-        Time.current + 1.week
+        timenow + 1.week
       when 4
-        Time.current + 2.weeks
+        timenow + 2.weeks
       else
-        Time.current + 1.month
+        timenow + 1.month
     end
   end
   
@@ -50,7 +49,6 @@ class Card < ActiveRecord::Base
     if self.original_text == translate
       self.review_date = change_date(group_num)
       self.update(review_date: review_date, group_num: group_num + 1, try_num: 3)
-      self.save
     else
       bad_tries
       false
