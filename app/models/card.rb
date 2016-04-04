@@ -16,18 +16,17 @@ class Card < ActiveRecord::Base
   #end
   
   def change_date(group_num)
-    timenow = Time.current
     case group_num
       when 0..1
-        timenow + 12.hour
+        12.hour
       when 2
-        timenow + 3.days
+        3.days
       when 3
-        timenow + 1.week
+        1.week
       when 4
-        timenow + 2.weeks
+        2.weeks
       else
-        timenow + 1.month
+        1.month
     end
   end
   
@@ -47,7 +46,7 @@ class Card < ActiveRecord::Base
 
   def check_card(translate)
     if self.original_text == translate
-      self.review_date = change_date(group_num)
+      self.review_date = Time.current + change_date(group_num)
       self.update(review_date: review_date, group_num: group_num + 1, try_num: 3)
     else
       bad_tries
