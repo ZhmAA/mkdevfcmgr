@@ -28,7 +28,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #gem for rails forms
 gem 'simple_form'
 
-gem 'nokogiri', '~> 1.6'
+gem 'nokogiri'
 
 # registration/authentication engine
 gem 'sorcery'
