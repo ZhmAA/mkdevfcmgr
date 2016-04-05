@@ -14,6 +14,9 @@ class HomeController < ApplicationController
     if @card.check_card(params[:translate])
       p :right
       redirect_to root_url, notice: "Правильно!"
+    elsif @card.levenshtein_algorithm(params[:translate])
+      p :right
+      redirect_to root_url, notice: "Правильно! Но есть опечатка"
     else
       p :wrong
       flash.now[:error] = "Не правильно"

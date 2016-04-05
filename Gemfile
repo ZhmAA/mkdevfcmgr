@@ -42,6 +42,8 @@ gem 'haml'
 
 gem 'rails_12factor', group: :production
 
+gem 'damerau-levenshtein'
+
 #debugger
 #gem 'pry-nav'
 
