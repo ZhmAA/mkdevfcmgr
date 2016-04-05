@@ -1,3 +1,3 @@
 [![Build Status](https://travis-ci.org/ZhmAA/mkdevfcmgr.svg)](https://travis-ci.org/ZhmAA/mkdevfcmgr)
 
-<a href="https://codeclimate.com/repos/5703daafdaec58185200399f/feed"><img src="https://codeclimate.com/repos/5703daafdaec58185200399f/badges/8fe834c8bd9ce806b13e/gpa.svg" /></a>
+[![Code Climate](https://codeclimate.com/repos/570412b30d9e70007c002316/badges/4147b1f17183aa44d261/gpa.svg)](https://codeclimate.com/repos/570412b30d9e70007c002316/feed)

@@ -37,11 +37,15 @@ class Card < ActiveRecord::Base
       errors.add(:original_text, "can't be the same as translated_text")
     end
   end
+  
+  def card_success_update
+    self.review_date = Time.current + change_date(group_num)
+    self.update(review_date: review_date, group_num: group_num + 1, try_num: 3)
+  end
 
   def check_card(translate)
     if self.original_text == translate
-      self.review_date = Time.current + change_date(group_num)
-      self.update(review_date: review_date, group_num: group_num + 1, try_num: 3)
+      card_success_update
     else
       bad_tries
       false
@@ -50,8 +54,7 @@ class Card < ActiveRecord::Base
   
   def levenshtein(translate)
     if levenshtein_algorithm(translate)
-      self.review_date = Time.current + change_date(group_num)
-      self.update(review_date: review_date, group_num: group_num + 1, try_num: 3)
+      card_success_update
     end
   end
 
