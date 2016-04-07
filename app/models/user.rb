@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
 
   def self.mail_for_unchecked_cards
-    User.joins(:cards).where('cards.review_date <= ?', Date.today).each do |user|
+    self.joins(:cards).where('cards.review_date <= ?', Time.current).each do |user|
       UserMailer.new_cards_for_check(user).deliver_now
     end
   end
