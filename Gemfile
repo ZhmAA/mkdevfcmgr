@@ -44,6 +44,8 @@ gem 'rails_12factor', group: :production
 
 gem 'damerau-levenshtein'
 
+gem 'whenever', require: false
+
 #debugger
 #gem 'pry-nav'
 

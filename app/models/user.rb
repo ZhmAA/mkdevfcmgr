@@ -11,4 +11,11 @@ class User < ActiveRecord::Base
   validates :email, :presence => true, :uniqueness => true, :format => USER_EMAIL_REGEX
   validates :password, length: { minimum: 5 }, confirmation: true
   validates :password_confirmation, presence: true
+
+  def self.mail_for_unchecked_cards
+    joins(:cards).where('cards.review_date <= ?', Time.current).each do |user|
+      UserMailer.new_cards_for_check(user).deliver_now
+    end
+  end
+
 end
