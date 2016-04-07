@@ -62,10 +62,4 @@ class Card < ActiveRecord::Base
     DamerauLevenshtein.distance(original_text, alt_text) < 2
   end
 
-  def self.mail_for_unchecked_cards
-    where(review_date: Time.current).each do |user|
-      UserMailer.new_cards_for_check(user).deliver_now
-    end
-  end
-
 end

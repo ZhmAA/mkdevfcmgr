@@ -21,5 +21,5 @@
 
 
 every 1.hour do
-  runner 'Card.mail_for_unchecked_cards'
+  runner 'User.mail_for_unchecked_cards'
 end
