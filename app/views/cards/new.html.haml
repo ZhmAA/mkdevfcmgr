@@ -1,7 +1,9 @@
 - if @decks.any?
-  %h2 Новая карточка
+  %h2
+    = t(:new_card)
   = render 'form'
   .backbutton
-    = link_to 'Back', cards_path, :class => "btn btn-danger btn-sm"
+    = link_to t(:button_back), cards_path, :class => "btn btn-danger btn-sm"
 - else
-  %p У вас еще нет колод для карточек. Создайте несколько.
+  %p
+    = t(:no_decks)

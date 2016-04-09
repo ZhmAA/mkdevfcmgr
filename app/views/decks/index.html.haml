@@ -1,12 +1,14 @@
 %section.content
-  %h2 Выберите колоду или создайте новую
+  %h2
+    = t(:deck_header_t)
   - @decks.each do |deck|
     .card.card-block
       %h4.card-title= deck.title
       - if deck.current == true
-        %p.card-text Текущая колода
-      = link_to 'Show', deck, :class => "btn btn-primary btn-sm"
-      = link_to 'Edit', edit_deck_path(deck), :class => "btn btn-primary btn-sm"
-      = link_to 'Destroy', deck_path(deck), :class => "btn btn-danger btn-sm", |
+        %p.card-text
+          = t(:current_deck)
+      = link_to t(:show), deck, :class => "btn btn-primary btn-sm"
+      = link_to t(:edit), edit_deck_path(deck), :class => "btn btn-primary btn-sm"
+      = link_to t(:destroy), deck_path(deck), :class => "btn btn-danger btn-sm", |
         method: :delete,                    |
         data: { confirm: 'Are you sure?' }  |

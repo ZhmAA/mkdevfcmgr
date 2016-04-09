@@ -1,13 +1,13 @@
 = simple_form_for @card, :html => {:multipart => true} do |f|
   .form-group
-    = f.input :original_text, label: 'Original text field'
+    = f.input :original_text, label: t(:original)
   .form-group
-    = f.input :translated_text, label: 'Translated text field'
+    = f.input :translated_text, label: t(:translated)
   = image_tag(@card.avatar_url) if @card.avatar?
   = f.file_field :avatar
   = f.hidden_field :avatar_cache
   .form-group
-    = f.association :deck, as: :radio_buttons
+    = f.association :deck, as: :radio_buttons, collection: current_user.decks
   .form-group
     = f.date_select :review_date, as: :date, order: [:day, :month, :year]
   = f.button :submit, :class => "btn btn-primary"

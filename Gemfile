@@ -46,6 +46,8 @@ gem 'damerau-levenshtein'
 
 gem 'whenever', require: false
 
+gem 'http_accept_language'
+
 #debugger
 #gem 'pry-nav'
 

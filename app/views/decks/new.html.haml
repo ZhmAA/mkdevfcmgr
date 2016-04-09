@@ -1,4 +1,5 @@
-%h2 Новая колода
+%h2
+  = t(:new_deck)
 = render 'form'
 .backbutton
-  = link_to 'Back', decks_path, :class => "btn btn-danger btn-sm"
+  = link_to t(:button_back), decks_path, :class => "btn btn-danger btn-sm"

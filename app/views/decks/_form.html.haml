@@ -1,7 +1,7 @@
 = simple_form_for @deck do |f|
   .form-group
-    = f.input :title, label: 'Deck title', :class => "form-control"
+    = f.input :title, label: t(:deck_label_name), :class => "form-control"
   .form-group
-    = f.select :current, [['Текущая колода', true],['Неактивная колода', false]], id: "disabledSelect"
+    = f.select :current, [[t(:current_deck), true],[t(:not_current_deck), false]], id: "disabledSelect"
   = f.hidden_field :user_id, value: current_user.id
   = f.button :submit, :class => "btn btn-primary"
