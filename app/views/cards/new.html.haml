@@ -1,9 +1,9 @@
 - if @decks.any?
   %h2
-    = t(:new_card)
+    = t :new_card
   = render 'form'
   .backbutton
     = link_to t(:button_back), cards_path, :class => "btn btn-danger btn-sm"
 - else
   %p
-    = t(:no_decks)
+    = t :no_decks

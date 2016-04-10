@@ -8,6 +8,7 @@ require 'rspec/rails'
 require 'factory_girl_rails'
 require 'capybara/rails'
 require 'capybara/rspec'
+require 'capybara/poltergeist'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -32,7 +33,10 @@ ActiveRecord::Migration.maintain_test_schema!
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  
 
+  Capybara.javascript_driver = :poltergeist
+  Capybara.page.driver.header 'Accept-Language','ru'
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
@@ -65,6 +69,6 @@ RSpec.configure do |config|
     visit "/login"
     fill_in "Email", with: email
     fill_in "Password", with: password
-    click_button "Войти"
+    click_button (I18n.t :enter)
   end
 end

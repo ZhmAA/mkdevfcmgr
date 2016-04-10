@@ -54,3 +54,8 @@ en:
 
   unreg_title: "Welcome! Sign up or login to get started!"
   reg_error: "This form was completed incorrectly"
+  welcome: "Welcome"
+  red_user: "Profile update successful!"
+  success_enter: "Login successful"
+  error_login: "Email or password isn't correct!"
+  logout_notice: "You logged out!"

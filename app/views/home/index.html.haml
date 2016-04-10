@@ -1,10 +1,10 @@
 %section.main
   %h3
-    = t(:header_title)
+    = t :header_title
   .card
     - if @card.nil?
       %h4
-        = t(:no_cards)
+        = t :no_cards
     - else
       = image_tag @card.avatar.thumb.url, class: "card-img-top"
       .card-block

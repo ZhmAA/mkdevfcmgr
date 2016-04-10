@@ -1,12 +1,12 @@
 = simple_form_for @user do |f|
   - if @user.errors.any?
     %h2
-      = t(:reg_error)
+      = t :reg_error
     %ul
       - for message in @user.errors.full_messages
         %li= message
   = f.input :email, label: "Email"
   = f.input :password, label: "Password"
-  = f.input :password_confirmation, label: "Password Confirmation"
+  = f.input :password_confirmation, label: "Password confirmation"
   = f.input :location, collection: I18n.available_locales, label: "Location"
   = f.button :submit, class: "btn btn-primary"
