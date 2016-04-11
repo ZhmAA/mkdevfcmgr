@@ -7,6 +7,10 @@
       = link_to t(:redact), edit_path, :class => "btn btn-primary btn-sm"
       = link_to t(:exit), logout_path, :class => "btn btn-danger btn-sm"
     - else
+      - if current_location(:en)
+        = link_to "RU", location: "ru"
+      - elsif current_location(:ru)
+        = link_to "EN", location: "en"
       = link_to t(:enter_tw), auth_at_provider_path(:provider => :twitter), :class => "btn btn-primary btn-sm"
       = link_to t(:enter_fb), auth_at_provider_path(:provider => :facebook), :class => "btn btn-primary btn-sm"
       = link_to t(:reg), signup_path, :class => "btn btn-primary btn-sm"

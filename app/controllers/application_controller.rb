@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     I18n.locale = if current_user
       current_user.location
     else
-      http_accept_language.compatible_language_from(I18n.available_locales)
+      params[:location] || http_accept_language.compatible_language_from(I18n.available_locales)
     end
   end
 
