@@ -7,7 +7,7 @@
       %p.card-text= card.review_date.strftime("%d-%m-%Y")
       %p.card-text= card.group_num
       %p.card-text= card.try_num
-      = link_to 'Edit', edit_card_path(card), :class => "btn btn-primary btn-sm"
-      = link_to 'Destroy', card_path(card), :class => "btn btn-danger btn-sm", |
+      = link_to t(:edit), edit_card_path(card), :class => "btn btn-primary btn-sm"
+      = link_to t(:destroy), card_path(card), :class => "btn btn-danger btn-sm", |
         method: :delete,                    |
         data: { confirm: 'Are you sure?' }  |

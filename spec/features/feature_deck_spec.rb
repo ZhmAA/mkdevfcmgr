@@ -10,12 +10,12 @@ describe "feature check decks", :type => :feature do
   end
 
   it "feature test, check that you can't create card if you havn't decks" do
-    click_link "Добавить карточку"
-    expect(page).to have_content "У вас еще нет колод для карточек"
+    click_link (I18n.t :add_cards)
+    expect(page).to have_content (I18n.t :no_decks)
   end
 
   it "feature test, check that decks create successful" do
-    click_link "Добавить колоду"
+    click_link (I18n.t :add_decks)
     fill_in "Deck title", with: "Test Deck"
     click_button "Create Deck"
     expect(current_path).to eq decks_path

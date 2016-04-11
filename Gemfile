@@ -46,6 +46,8 @@ gem 'damerau-levenshtein'
 
 gem 'whenever', require: false
 
+gem 'http_accept_language'
+
 #debugger
 #gem 'pry-nav'
 
@@ -60,6 +62,7 @@ gem 'whenever', require: false
 
 gem 'factory_girl_rails'
 gem 'capybara'
+gem 'poltergeist'
 
 # Access an IRB console on exception pages or by using <%= console %> in views
 gem 'web-console', '~> 2.0', group: :development

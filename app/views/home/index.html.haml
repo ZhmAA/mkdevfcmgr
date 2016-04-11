@@ -1,9 +1,10 @@
 %section.main
   %h3
-    Первый в мире удобный менеджер флеш-карточек. Именно так.
+    = t :header_title
   .card
     - if @card.nil?
-      %h4 Карточек нет
+      %h4
+        = t :no_cards
     - else
       = image_tag @card.avatar.thumb.url, class: "card-img-top"
       .card-block

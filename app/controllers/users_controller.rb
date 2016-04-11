@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       auto_login(@user)
-      redirect_to root_url, :notice => "Добро пожаловать!"
+      redirect_to root_url, :notice => t(:welcome)
     else
       render :new
     end
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
       if @user.update(user_params)
-        redirect_to root_url, :notice => "Профиль отредактирован успешно!"
+        redirect_to root_url, :notice => t(:red_user)
       else
         render 'edit'
       end
@@ -31,6 +31,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :authentications_attributes)
+    params.require(:user).permit(:email, :password, :password_confirmation, :authentications_attributes, :location)
   end
 end

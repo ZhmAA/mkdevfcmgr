@@ -3,18 +3,22 @@
     %a{:href => "/"} Flash Cards
   %section.userloginbuttons
     - if current_user
-      Вы зашли как #{current_user.email}.
-      = link_to "Редактировать", edit_path, :class => "btn btn-primary btn-sm"
-      = link_to "Выйти", logout_path, :class => "btn btn-danger btn-sm"
+      = current_user.email
+      = link_to t(:redact), edit_path, :class => "btn btn-primary btn-sm"
+      = link_to t(:exit), logout_path, :class => "btn btn-danger btn-sm"
     - else
-      = link_to "Войти через Twitter", auth_at_provider_path(:provider => :twitter), :class => "btn btn-primary btn-sm"
-      = link_to "Войти через Facebook", auth_at_provider_path(:provider => :facebook), :class => "btn btn-primary btn-sm"
-      = link_to "Зарегистрироваться", signup_path, :class => "btn btn-primary btn-sm"
+      - if current_location(:en)
+        = link_to "RU", location: "ru"
+      - elsif current_location(:ru)
+        = link_to "EN", location: "en"
+      = link_to t(:enter_tw), auth_at_provider_path(:provider => :twitter), :class => "btn btn-primary btn-sm"
+      = link_to t(:enter_fb), auth_at_provider_path(:provider => :facebook), :class => "btn btn-primary btn-sm"
+      = link_to t(:reg), signup_path, :class => "btn btn-primary btn-sm"
       или
-      = link_to "Войти", login_path, :class => "btn btn-success btn-sm"
+      = link_to t(:enter), login_path, :class => "btn btn-success btn-sm"
   .cardsbuttons
     - if current_user
       %ul.navigation-links
-        %li= link_to "Все карточки", decks_path, :class => "btn btn-primary"
-        %li= link_to "Добавить карточку", new_card_path, :class => "btn btn-primary"
-        %li= link_to "Добавить колоду", new_deck_path, :class => "btn btn-primary"
+        %li= link_to t(:all_cards), decks_path, :class => "btn btn-primary"
+        %li= link_to t(:add_cards), new_card_path, :class => "btn btn-primary"
+        %li= link_to t(:add_decks), new_deck_path, :class => "btn btn-primary"

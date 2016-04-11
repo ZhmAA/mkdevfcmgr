@@ -10,7 +10,7 @@ describe "feature check user", :type => :feature do
       fill_in "Password", with: "12345"
       fill_in "Password confirmation", with: "12345"
       click_button "Create User"
-      expect(page).to have_content "Добро пожаловать!"
+      expect(page).to have_content (I18n.t :welcome)
     end
   end
 
@@ -23,21 +23,21 @@ describe "feature check user", :type => :feature do
     end
 
     it "check that user create" do
-      expect(page).to have_content "Вход прошел успешно"
+      expect(page).to have_content (I18n.t :success_enter)
     end
 
     it "check that user logout succesful" do
-      click_link "Выйти"
+      click_link (I18n.t :exit)
       expect(current_path).to eq login_path
     end
 
     it "check that user edit succesful" do
-      click_link "Редактировать"
+      click_link (I18n.t :redact)
       fill_in "Email", with: "edit@name.com"
       fill_in "Password", with: "12345"
       fill_in "Password confirmation", with: "12345"
       click_button "Update User"
-      expect(page).to have_content "Профиль отредактирован успешно!"
+      expect(page).to have_content (I18n.t :red_user)
     end
   end
 
@@ -45,7 +45,7 @@ describe "feature check user", :type => :feature do
 
     it "he can't create card" do
       visit root_path
-      expect(page).to have_content "Зарегистрируйтесь или войдите чтобы начать работу"
+      expect(page).to have_content (I18n.t :welcome)
     end
     
   end
