@@ -10,7 +10,7 @@ class Supermemo
 
   def self.e_factor(efact, qual)
     factor = (efact + (0.1 - (5 - qual) * (0.08 + (5 - qual) * 0.02)))
-    factor < 1.3 ? factor : 1.3
+    factor > 1.3 ? factor : 1.3
   end
 
   def self.interval(efact, inter)
