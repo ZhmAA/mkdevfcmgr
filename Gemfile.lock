@@ -299,6 +299,8 @@ GEM
       trollop
     rdoc (4.2.2)
       json (~> 1.4)
+    rollbar (2.8.3)
+      multi_json
     rspec-core (3.4.4)
       rspec-support (~> 3.4.0)
     rspec-expectations (3.4.0)
@@ -386,6 +388,7 @@ DEPENDENCIES
   poltergeist
   rails (= 4.2.6)
   rails_12factor
+  rollbar (~> 2.8.3)
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

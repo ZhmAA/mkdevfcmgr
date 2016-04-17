@@ -48,6 +48,8 @@ gem 'whenever', require: false
 
 gem 'http_accept_language'
 
+gem 'rollbar', '~> 2.8.3'
+
 #debugger
 #gem 'pry-nav'
 
