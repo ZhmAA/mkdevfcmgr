@@ -48,6 +48,9 @@ gem 'whenever', require: false
 
 gem 'http_accept_language'
 
+gem 'rollbar', '~> 2.8.3'
+gem 'newrelic_rpm'
+
 #debugger
 #gem 'pry-nav'
 
