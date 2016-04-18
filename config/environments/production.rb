@@ -65,17 +65,16 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  address:              'smtp.gmail.com',
-  port:                 587,
+  address:              ENV["MAILGUN_SMTP_SERVER"],
+  port:                 ENV["MAILGUN_SMTP_PORT"],
   domain:               ENV["DOMAIN_NAME"],
-  user_name:            ENV["GMAIL_USERNAME"],
-  password:             ENV["GMAIL_PASSWORD"],
+  user_name:            ENV["MAILGUN_SMTP_LOGIN"],
+  password:             ENV["MAILGUN_SMTP_PASSWORD"],
   authentication:       'plain',
   enable_starttls_auto: true  
   }
 
   config.action_mailer.default_url_options = { :host => 'cherry-surprise-76914.herokuapp.com' } 
-
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
