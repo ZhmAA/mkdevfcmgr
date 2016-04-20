@@ -12,4 +12,6 @@
           = @card.translated_text
         %p.card-text 
           = @card.review_date.strftime("%d-%m-%Y")
-        %p= render 'form'
+        #form_js
+          %p= render 'form', card: @card
+      #timer_block
