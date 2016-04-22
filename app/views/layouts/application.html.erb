@@ -13,14 +13,10 @@
   <section id="container">
     
       <%= render "shared/header" %>
- 
-      <% if flash[:notice] %>
-       <div class="alert alert-success"><%= flash[:notice] %></div>
-      <% end %>
-
-      <% if flash[:error] %>
-        <div class="alert alert-danger"><%= flash[:error] %></div>
-      <% end %>
+      
+    <div id="notices">
+      <%= render "shared/flash_notice" %>
+    </div>      
 
 <%= yield %>
 
