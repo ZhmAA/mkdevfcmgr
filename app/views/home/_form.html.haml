@@ -1,4 +1,4 @@
-= form_tag check_path do
+= form_tag check_path, remote: true do
   %fieldset.form-group
     = text_field_tag :translate
   = hidden_field_tag :card_id, @card.id

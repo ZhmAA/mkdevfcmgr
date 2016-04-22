@@ -2,16 +2,5 @@
   %h3
     = t :header_title
   .card
-    - if @card.nil?
-      %h4
-        = t :no_cards
-    - else
-      = image_tag @card.avatar.thumb.url, class: "card-img-top"
-      .card-block
-        %p.card-text 
-          = @card.translated_text
-        %p.card-text 
-          = @card.review_date.strftime("%d-%m-%Y")
-        #form_js
-          %p= render 'form', card: @card
-      #timer_block
+    #form_js
+      = render 'js_check', card: @card
