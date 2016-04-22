@@ -1,0 +1,12 @@
+- if @card.nil?
+  %h4
+    = t :no_cards
+- else
+  = image_tag @card.avatar.thumb.url, class: "card-img-top"
+  .card-block
+    %p.card-text 
+      = @card.translated_text
+    %p.card-text 
+      = @card.review_date.strftime("%d-%m-%Y")
+    %p= render 'form'
+  #timer_block
