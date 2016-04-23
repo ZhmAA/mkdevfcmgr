@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Home::UsersController < ApplicationController
   skip_before_action :require_login, only: [:new, :create]
   
   def new
@@ -13,19 +13,6 @@ class UsersController < ApplicationController
     else
       render :new
     end
-  end
-
-  def edit
-    @user = current_user
-  end
-
-  def update
-    @user = User.find(params[:id])
-      if @user.update(user_params)
-        redirect_to root_url, :notice => t(:red_user)
-      else
-        render 'edit'
-      end
   end
 
   private

@@ -7,8 +7,8 @@
       - if deck.current == true
         %p.card-text
           = t :current_deck
-      = link_to t(:show), deck, :class => "btn btn-primary btn-sm"
-      = link_to t(:edit), edit_deck_path(deck), :class => "btn btn-primary btn-sm"
-      = link_to t(:destroy), deck_path(deck), :class => "btn btn-danger btn-sm", |
+      = link_to t(:show), dashboard_deck_path(deck), :class => "btn btn-primary btn-sm"
+      = link_to t(:edit), edit_dashboard_deck_path(deck), :class => "btn btn-primary btn-sm"
+      = link_to t(:destroy), dashboard_deck_path(deck), :class => "btn btn-danger btn-sm", |
         method: :delete,                    |
         data: { confirm: 'Are you sure?' }  |

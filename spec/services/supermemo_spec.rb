@@ -6,7 +6,6 @@ describe Supermemo do
   let(:deck) { create :deck, user: user }
 
   before(:each) do
-    login("first@name.com", "123456789")
     @card = create(:card, deck: deck, user: user, efact: 2.5, inter: 0)
     @valueone = (Time.current + 1.day).strftime("%Y-%m-%d")
     @valuetwo = (Time.current + 6.day).strftime("%Y-%m-%d")

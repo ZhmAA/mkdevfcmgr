@@ -1,4 +1,4 @@
-= simple_form_for @card, :html => {:multipart => true} do |f|
+= simple_form_for @card, :url => {:controller => "dashboard/cards"}, :html => {:multipart => true} do |f|
   .form-group
     = f.input :original_text, label: t(:original)
   .form-group

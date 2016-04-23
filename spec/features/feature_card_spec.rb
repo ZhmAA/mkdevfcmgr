@@ -6,7 +6,10 @@ describe "feature check card", :type => :feature do
   let(:deck) { create :deck, user: user }
 
   before(:each) do
-    login("first@name.com", "123456789")
+    visit home_login_path
+    fill_in "Email", with: "first@name.com"
+    fill_in "Password", with: "123456789"
+    click_button (I18n.t :enter)
     @card = create(:card, deck: deck, user: user)
     visit root_path
   end

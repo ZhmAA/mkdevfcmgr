@@ -1,4 +1,4 @@
-= simple_form_for @deck do |f|
+= simple_form_for @deck, :url => {:controller => "dashboard/decks"} do |f|
   .form-group
     = f.input :title, label: t(:deck_label_name), :class => "form-control"
   .form-group

@@ -1,4 +1,4 @@
-= simple_form_for @user do |f|
+= simple_form_for @user, url: home_users_path do |f|
   - if @user.errors.any?
     %h2
       = t :reg_error

@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class Dashboard::HomeController < ApplicationController
   
   def index
     if current_user.decks.current.any? 
