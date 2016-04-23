@@ -3,7 +3,7 @@
     = t :new_card
   = render 'form'
   .backbutton
-    = link_to t(:button_back), cards_path, :class => "btn btn-danger btn-sm"
+    = link_to t(:button_back), dashboard_cards_path, :class => "btn btn-danger btn-sm"
 - else
   %p
     = t :no_decks

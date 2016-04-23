@@ -1,4 +1,4 @@
-class CardsController < ApplicationController
+class Dashboard::CardsController < ApplicationController
   before_action :userdecks, only: [:new, :create, :edit, :update]
 
   def index

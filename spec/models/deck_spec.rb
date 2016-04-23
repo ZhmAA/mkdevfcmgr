@@ -11,7 +11,6 @@ RSpec.describe Deck, type: :model do
   end
 
   before(:each) do
-    login("first@name.com", "123456789")
     one_of_deck.update_attribute(:current, true)
     one_more_deck.update_attribute(:current, true)
   end

@@ -5,7 +5,10 @@ describe "feature check decks", :type => :feature do
   let!(:user) { create(:user, email: "first@name.com", password: "123456789") }
 
   before(:each) do
-    login("first@name.com", "123456789")
+    visit home_login_path
+    fill_in "Email", with: "first@name.com"
+    fill_in "Password", with: "123456789"
+    click_button (I18n.t :enter)
     visit root_path
   end
 
@@ -18,7 +21,7 @@ describe "feature check decks", :type => :feature do
     click_link (I18n.t :add_decks)
     fill_in "Deck title", with: "Test Deck"
     click_button "Create Deck"
-    expect(current_path).to eq decks_path
+    expect(current_path).to eq dashboard_decks_path
   end
 
 end

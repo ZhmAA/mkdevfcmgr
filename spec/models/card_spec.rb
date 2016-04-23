@@ -6,7 +6,6 @@ RSpec.describe Card, :type => :model do
   let(:deck) { create :deck, user: user }
   
   before(:each) do
-    login("first@name.com", "123456789")
     @card = create(:card, deck: deck, user: user)
   end
 

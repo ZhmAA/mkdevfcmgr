@@ -7,7 +7,7 @@
       %p.card-text= card.review_date.strftime("%d-%m-%Y")
       %p.card-text= card.efact
       %p.card-text= card.inter
-      = link_to t(:edit), edit_card_path(card), :class => "btn btn-primary btn-sm"
-      = link_to t(:destroy), card_path(card), :class => "btn btn-danger btn-sm", |
+      = link_to t(:edit), edit_dashboard_card_path(card), :class => "btn btn-primary btn-sm"
+      = link_to t(:destroy), dashboard_card_path(card), :class => "btn btn-danger btn-sm", |
         method: :delete,                    |
         data: { confirm: 'Are you sure?' }  |

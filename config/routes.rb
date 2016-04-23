@@ -1,20 +1,26 @@
 Rails.application.routes.draw do
 
-  root 'home#index'
-  post 'check', to: 'home#check'
-  get "logout" => "user_sessions#destroy", :as => "logout"
-  get "login" => "user_sessions#new", :as => "login"
-  get "signup" => "users#new", :as => "signup"
-  get "edit" => "users#edit", :as => "edit"
+  root 'dashboard/home#index'
+    
+  namespace :home do
+    get "login" => "user_sessions#new", :as => "login"
+    get "signup" => "users#new", :as => "signup"
+    resources :users, only: [:new, :create]
+    resources :user_sessions, only: [:new, :create]
+    post "oauth/callback" => "oauths#callback"
+    get "oauth/callback" => "oauths#callback"
+    get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
+  end
 
-  resources :cards
-  resources :decks
-  resources :users, only: [:new, :create, :edit, :update]
-  resources :user_sessions, only: [:new, :create, :destroy]
-
-  post "oauth/callback" => "oauths#callback"
-  get "oauth/callback" => "oauths#callback"
-  get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
+  namespace :dashboard do
+    post 'check', to: 'home#check'
+    get "logout" => "user_sessions#destroy", :as => "logout"
+    resources :users, only: [:edit, :update]
+    resources :user_sessions, only: [:destroy]
+    get "edit" => "users#edit", :as => "edit"
+    resources :cards
+    resources :decks  
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
